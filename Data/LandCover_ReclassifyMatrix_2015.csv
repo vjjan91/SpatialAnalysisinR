@@ -1,0 +1,72 @@
+V1,V2,To,Name,NewName
+1,1,NA,NoData,NoData
+2,2,1,Evergreen,Evergreen
+6,6,1,Sub-tropical broadleaved,Evergreen
+11,11,1,Semi-evergreen,Evergreen
+57,57,1,Riverine,Evergreen
+59,59,1,Ravine,Evergreen
+60,60,1,Sacred groves,Evergreen
+12,12,2,Moist deciduous,Deciduous
+13,13,2,Sal mixed moist deciduous,Deciduous
+14,14,2,Teak mixed moist deciduous,Deciduous
+15,15,2,Dry deciduous,Deciduous
+23,23,2,Teak,Deciduous
+30,30,2,Hardwickia,Deciduous
+33,33,2,Boswellia,Deciduous
+35,35,2,Anogeissus pendula,Deciduous
+22,22,2,Sal,Deciduous
+17,17,3,Teak mixed dry deciduous,Mixed Forest
+19,19,3,Bamboo mixed,Mixed Forest
+56,56,4,Sholas,Sholas
+74,74,5,Degraded forest,Degraded Forest
+75,75,5,Shifting cultivation,Degraded Forest
+73,73,5,Gliricidia plantation,Degraded Forest
+79,79,5,Woodland,Degraded Forest
+81,81,6,Shrub savannah,Scrubland
+82,82,6,Scrub,Scrubland
+83,83,6,Open Scrub,Scrubland
+85,85,6,Dry deciduous scrub,Scrubland
+87,87,6,Euphorbia scrub,Scrubland
+89,89,6,Dry alpine scrub,Scrubland
+18,18,6,Thorn forest,Scrubland
+91,91,6,Lantana Scrub,Scrubland
+88,88,6,Moist alpine scrub,Scrubland
+93,93,7,Desert dune scrub,Dry Grassland
+94,94,7,Thorn scrub,Dry Grassland
+97,97,7,Grassland,Dry Grassland
+103,103,7,Drt grassland,Dry Grassland
+90,90,7,Prosopis juliflora,Dry Grassland
+80,80,7,Tree savannah,Dry Grassland
+62,62,7,Kans,Dry Grassland
+98,98,8,Wet grasslands,Wet Grassland
+99,99,8,Riverine grasslands,Wet Grassland
+105,105,8,Swampy grassland,Wet Grassland
+106,106,8,Lasiurus-Panicum grassland,Wet Grassland
+107,107,8,Cenchrus-Dactyloctenium grasslan,Wet Grassland
+109,109,8,Sehima-Dichanthium grassland,Wet Grassland
+115,115,9,Arecanut,Plantation
+116,116,9,Coconut,Plantation
+119,119,9,Mango,Plantation
+113,113,9,Tea,Plantation
+25,25,9,Bamboo ,Plantation
+63,63,9,Forest plantations,Plantation
+65,65,9,Acacia,Plantation
+66,66,9,Casuriana,Plantation
+112,112,9,Orchard,Plantation
+72,72,9,Mixed plantation,Plantation
+134,134,10,Settlement,Settlement
+20,20,11,Temperate coniferous,High Elevation Plantation
+26,26,11,Pine,High Elevation Plantation
+100,100,11,Moist alpine pasture,High Elevation Plantation
+41,41,12,Mangrove,Coastal
+42,42,12,Avicennia,Coastal
+46,46,12,Lumnitzera,Coastal
+47,47,12,Mangrove scrub,Coastal
+51,51,12,Littoral Forest,Coastal
+110,110,12,Costal swampy grassland,Coastal
+131,131,12,Run of Kutchh,Coastal
+129,129,13,Barren land,Barren Land
+130,130,13,River bed,Barren Land
+127,127,14,Agriculture,Cropland
+132,132,15,Water body,Wetlands
+133,133,15,Wet lands,Wetlands
