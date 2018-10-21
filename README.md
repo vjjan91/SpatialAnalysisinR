@@ -5,7 +5,7 @@ This repository hosts scripts and information for the 'Spatial Analysis in R' wo
 
 In this repository, you will find scripts and data for the workshop.
 
-1.	Please bring your own device, preferably with R/RStudio installed.
+1.	Please bring your own device, preferably with [R/RStudio](https://www.rstudio.com/) installed.
 2.	I have added sample data, which will be used during the workshop. Alternately, you are more than welcome to bring your own data and play around with it during the workshop.  
 
 ### Details
