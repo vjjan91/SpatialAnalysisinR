@@ -73,7 +73,7 @@ axis(2)
 box()
 map.scale(575410, 155719, miles2ft(2), "Miles",4, 0.5)
 north.arrow(577427, 178907, miles2ft(0.2), col='lightblue', cex.lab = 0.8)
-title("Look at me, I am so Cool!")
+title("Add meaningful title here")
 
 # ColorBrewer package has a large number of color gradients one can choose from (for instance, Green)
 shades <- auto.shading(blocks@data$P_VACANT, cols = brewer.pal(5, "Greens"))
@@ -110,17 +110,17 @@ WGCrs<- CRS("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")
 barfly_pr@proj4string <-WGCrs
 barfly_pr
 
+# Visualizing data for bird occurrences on the boundary drawn
+plot(WG)
+plot(barfly_pr, add=T, col='red', pch=1) 
+axis(1); axis(2); box()
+
 # Showing interactive plotting with vector data
 install.packages("mapview")
 library(mapview)
 m1 <- mapview(WG)
 m2 <- mapview(barfly_pr)
 m1+m2
-
-# Visualizing data for bird occurrences on the boundary drawn
-plot(WG)
-plot(barfly_pr, add=T, col='red', pch=1) 
-axis(1); axis(2); box()
 
 # Transforming coordinate system
 # For the below functions, one has to ensure that the coordinate systems are the same across polygons and shapefiles
