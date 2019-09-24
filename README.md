@@ -1,5 +1,5 @@
 # Spatial Analysis in R
-This repository hosts scripts and information for the 'Spatial Analysis in R' workshop at SCCS-NY 2018.
+This repository hosts scripts and information for the 'Spatial Analysis in R' workshop at SCCS-NY 2019.
 
 ### Instructions
 
