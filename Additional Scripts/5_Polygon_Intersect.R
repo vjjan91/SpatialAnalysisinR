@@ -2,6 +2,8 @@
 # Author: Vijay Ramesh
 # Date : June 2017
 
+#### Please use st_intersects / st_intersection - Outdated script ####
+
 # Load libraries
 library(rgdal)
 library(GISTools)
@@ -25,4 +27,5 @@ for (i in 1:length(shapes)){
   write.table(results,file="C:\\Users\\rameshv\\Desktop\\Overlap_Countries.csv", row.names=F,
               append = TRUE, col.names = F, sep = ",")
 }
+
 
