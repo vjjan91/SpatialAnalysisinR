@@ -1,7 +1,7 @@
 # Handling Raster Data
 
-# Script 3: SCCSNY-18
-# Dt: 26th October 2018
+# Script 4: SCCSNY-19
+# Dt: 5th October 2019
 
 # Using WorldClim data for this workshop
 
@@ -12,7 +12,7 @@ library(rgdal)
 library(mapview)
 library(spatialEco)
 
-setwd("C:\\Users\\vr235\\Desktop\\Spatial Analysis in R - SCCS 2018\\Data\\")
+setwd("C:\\Users\\vr235\\Desktop\\Spatial Analysis in R - SCCS 2019\\Data\\")
 
 # Multiple options of loading data
 # 1. Downloading layers for the entire globe at a coarse resolution
@@ -99,19 +99,11 @@ WG_new
 # Extracting values from a raster for a given set of points
 # Loading data from Ramesh et al., (2017)
 
-barfly_pr <- read.csv("barfly_pr.csv")
-head(barfly_pr)
-coordinates(barfly_pr)<- ~LONGITUDE+LATITUDE
-WGCrs<- CRS("+init=epsg:4326")
-barfly_pr@proj4string <-WGCrs
-barfly_pr
-
-# Transform the coordinate system to match that of the rasters
-# Here, we use spTransform for transforming the coordinate system of vectors
-barfly_pr <- spTransform(barfly_pr, "+proj=utm +zone=43 +datum=WGS84 +units=m +no_defs")
+# Use data loaded previously
+barfly
 
 # Using the raster::extract to obtain values for rasters at given locations of bird occurrence
-Pres <- extract(WG_new,barfly_pr)
+Pres <- extract(WG_new,barfly)
 Pres <- data.frame(coordinates(barfly_pr), Pres)
 head(Pres) # I have a dataframe ready for further analysis
 
@@ -119,12 +111,12 @@ head(Pres) # I have a dataframe ready for further analysis
 # How do you prepare the data? Aggregate classes? Resample ?
 
 # Load Land Cover Raster
-lulc_2015 <- raster("C:\\Users\\vr235\\Desktop\\Spatial Analysis in R - SCCS 2018\\Data\\2015_lulc")
+lulc_2015 <- raster("C:\\Users\\vr235\\Desktop\\Spatial Analysis in R - SCCS 2019\\Data\\2015_lulc")
 lulc_2015
 lulc_2015@data@attributes # Gives you a list of all land cover classes and their respective count
 
 # Load matrix to be used for reclassification
-rec <- read.csv("C:\\Users\\vr235\\Desktop\\Spatial Analysis in R - SCCS 2018\\Data\\LandCover_ReclassifyMatrix_2015.csv")
+rec <- read.csv("C:\\Users\\vr235\\Desktop\\Spatial Analysis in R - SCCS 2019\\Data\\LandCover_ReclassifyMatrix_2015.csv")
 
 #Reclassifying the Raster to convert 70 LC to 15 LC (Since I have too many classes)
 rc <- as.matrix(data.frame(from=rec$V2, to=rec$To))

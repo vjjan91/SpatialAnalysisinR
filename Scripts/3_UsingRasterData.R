@@ -1,19 +1,18 @@
 
 # Handling Raster Data
 
-# Script 3: SCCS-NY 2018
-# Dt: October 21st 2018
+# Script 3: SCCS-NY 2019
+# Dt: October 5th 2018
 
 # Using WorldClim data for this workshop
 
 library(raster)
-# library(sf)
-library(sp)
+library(sf)
 library(rgdal)
-library(mapview)
-library(spatialEco)
 
-setwd("C:\\Users\\vr235\\Desktop\\Spatial Analysis in R - SCCS 2018\\Data\\")
+# library(spatialEco)
+
+setwd("C:\\Users\\vr235\\Desktop\\Spatial Analysis in R - SCCS 2019\\Data\\") # Change this accordingly
 
 # Multiple options of loading data
 # 1. Downloading layers for the entire globe at a coarse resolution
@@ -45,9 +44,6 @@ enva123<-merge(env12, env3)
 envall<-merge(env123, env4)
 
 # Define the extent of your study region / region of interest
-# Using readOGR from rgdal 
-
-WG <- readOGR("WG.shp")
 
 # Note order as xmin, xmax, ymin, ymax
 # Suppose I want to define an extent for the area I want to crop
@@ -100,16 +96,11 @@ WG_new
 # Extracting values from a raster for a given set of points
 # Loading data from Ramesh et al., (2017)
 
-barfly_pr <- read.csv("barfly_pr.csv")
-head(barfly_pr)
-coordinates(barfly_pr)<- ~LONGITUDE+LATITUDE
-WGCrs<- CRS("+init=epsg:4326")
-barfly_pr@proj4string <-WGCrs
-barfly_pr
+head(barfly)
 
-# Transform the coordinate system to match that of the rasters
-# Here, we use spTransform for transforming the coordinate system of vectors
-barfly_pr <- spTransform(barfly_pr, "+proj=utm +zone=43 +datum=WGS84 +units=m +no_defs")
+# Ensure the coordinate system matches that of the rasters
+st_crs(barfly)
+barfly <- st_transform(barfly, 32643)
 
 # Using the raster::extract to obtain values for rasters at given locations of bird occurrence
 Pres <- extract(WG_new,barfly_pr)
@@ -118,3 +109,14 @@ head(Pres) # I have a dataframe ready for further analysis
 
 # If you need help with preparing land cover rasters, feel free to reach out. 
 ?writeRaster
+
+## What about time-series data? 
+library(stars)
+
+
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 
-# Basics of Spatial Analyses - Data types, Mapping, Slots
+# Basics of Spatial Analyses - Data types, Mapping, Slots - Use of the sp package 
 
-# Script 1 - SCCS-NY 2018
+# Old Script - SCCS-NY 2018
 # Dt: 21st October 2018
 
 # A useful package to start learning Spatial Visualization  and Data Types in R is GISTools
