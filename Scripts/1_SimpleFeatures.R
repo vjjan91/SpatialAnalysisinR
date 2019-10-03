@@ -172,41 +172,11 @@ ggplot(nc_mean_area) +
 
 ## For more such examples, I recommend visiting: http://strimas.com/r/tidy-sf/
 
-## Static Mapping Examples (Code borrowed from useR 2017 conference - Bhaskar K)
-
-library(maps)
-library(rnaturalearth) # Useful package for visualizations at large spatial scales
-
-data(world.cities)
-
-world.cities <- world.cities[world.cities$pop>1000000,]
-world.cities <- st_as_sf(world.cities, coords = c("long","lat"), crs=4326)
-
-world <- countries110
-world <- world[world$name != 'Antarctica',]
-grid.lines.mj <- gridlines(world,easts = seq(-180,180,by=30), norths = seq(-90,90,by=30))
-grid.lines.mi <- gridlines(world,easts = seq(-165,195,by=15), norths = seq(-90,90,by=15))
-
-# Using Base R visualization tools
-par(mar = c(8, 0.1, 0.1, 0.1))
-plot(methods::as(world, 'Spatial'), expandBB=c(0,0,0.05,0.05)) # Learned about this recently
-plot(world, add=TRUE, border=grey(0.2))
-plot(grid.lines.mi, col=grey(0.95), add=T)
-plot(grid.lines.mj, col=grey(0.9), add=T)
-text(labels(grid.lines.mj, side=1:2, col = grey(.6), offset=0.3))
-plot(world.cities, add=TRUE, col='#FF5A0088', pch=20,
-          cex=world.cities$pop/2000000)
-v = c(1,4,8,12)
-legend("topright", legend = v, pch = 20, pt.cex = v/2,
-            text.col =grey(.7), box.col=grey(0.9), col = '#FF5A0088',
-            title='Pop. (Millions)', horiz =T)
-
-# It's not bad, but it's not perfect and can get a little clunky
 ## Question usually raised at this point: 
 ## How do I know what projection to use for my data. Fear not as proejctionWizard is here to help - http://projectionwizard.org/
 ## Also highly recommend using: https://spatialreference.org/
 
-## Let's try the above using ggplot2()
+## Let's try using ggplot2()
 library(rnaturalearthdata) # Wonderful dataset with boundaries, polygons 
 
 world <- ne_countries(scale='medium',returnclass = 'sf')
