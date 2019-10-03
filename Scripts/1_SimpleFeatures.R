@@ -4,7 +4,7 @@
 # Script 1: SCCS-NY 2019
 # Dt: October 5th 2019
 
-# Trial using the sf package in R
+# Using the sf package in R
 library(sf)
 
 # Using data provided in the data folder:
@@ -243,7 +243,7 @@ m1+m2
 # Edit map interactively:
 library(mapedit)
 a <- mapview(WG) %>% editMap('WG')
-mapview(a$drawn)
+mapview(a$drawn) + mapview(WG)
 
 ### Finishing up with some basics of raster package
 library(raster)
