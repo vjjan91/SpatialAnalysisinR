@@ -12,7 +12,7 @@ library(rgdal)
 library(mapview)
 library(spatialEco)
 
-setwd("C:\\Users\\vr235\\Desktop\\Spatial Analysis in R - SCCS 2019\\Data\\")
+# setwd("C:\\Users\\vr235\\Desktop\\Spatial Analysis in R - SCCS 2019\\Data\\")
 
 # Multiple options of loading data
 # 1. Downloading layers for the entire globe at a coarse resolution
