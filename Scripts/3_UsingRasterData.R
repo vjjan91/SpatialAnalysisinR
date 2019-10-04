@@ -10,9 +10,8 @@ library(raster)
 library(sf)
 library(rgdal)
 
-# library(spatialEco)
 
-setwd("C:\\Users\\vr235\\Desktop\\Spatial Analysis in R - SCCS 2019\\Data\\") # Change this accordingly
+# setwd("C:\\Users\\vr235\\Desktop\\Spatial Analysis in R - SCCS 2019\\Data\\") # Change this accordingly
 
 # Multiple options of loading data
 # 1. Downloading layers for the entire globe at a coarse resolution
