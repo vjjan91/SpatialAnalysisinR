@@ -10,23 +10,23 @@ library(sf)
 # Using data provided in the data folder:
 # Let's read in a .csv of points (Potential problems at this point?)
 
-barfly <- read.csv("C:\\Users\\vr235\\Desktop\\SCCS2019\\SpatialAnalysisinR\\Data\\barfly_pr.csv",header=TRUE)
-head(barfly)
+barfly_pr <- read.csv("barfly_pr.csv",header=TRUE)
+head(barfly_pr)
 
 # Convert it to a shapefile 
-barfly <- st_as_sf(barfly, coords=c("LONGITUDE","LATITUDE"),crs=4326)
-barfly # Let's take a look at it
-class(barfly)
+barfly_pr <- st_as_sf(barfly_pr, coords=c("LONGITUDE","LATITUDE"),crs=4326)
+barfly_pr # Let's take a look at it
+class(barfly_pr)
 
 # A basic visualization
-plot(barfly$geometry)
+plot(barfly_pr$geometry)
 axis(1)
 axis(2)
 box()
 grid()
 
 # Let's try reading in a polygon
-WG <- st_read("C:\\Users\\vr235\\Desktop\\SCCS2019\\SpatialAnalysisinR\\Data\\WG.shp")
+WG <- st_read("WG.shp")
 class(WG)
 st_crs(WG) <- 4326
 
@@ -131,6 +131,7 @@ nc[Ashe, op=st_touches] # Removing Self-intersection (Ashe with Ashe)
 
 ## Examples of using tidy ##
 ## Example 1
+library(dplyr)
 nc %>% 
   # salculate Area in km^2
   mutate(area_km2 = AREA * 10000) %>% 
@@ -178,6 +179,8 @@ ggplot(nc_mean_area) +
 
 ## Let's try using ggplot2()
 library(rnaturalearthdata) # Wonderful dataset with boundaries, polygons 
+library(rnaturalearth)
+library(rgeos)
 
 world <- ne_countries(scale='medium',returnclass = 'sf')
 class(world)
@@ -237,7 +240,7 @@ library(mapview)
 m1 <- mapview(WG)
 m1
 
-m2 <- mapview(barfly)
+m2 <- mapview(barfly_pr)
 m1+m2
 
 # Edit map interactively:
