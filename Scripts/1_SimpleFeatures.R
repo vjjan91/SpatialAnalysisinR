@@ -10,7 +10,7 @@ library(sf)
 # Using data provided in the data folder:
 # Let's read in a .csv of points (Potential problems at this point?)
 
-barfly_pr <- read.csv("barfly_pr.csv",header=TRUE)
+barfly_pr <- read.csv("barfly_pr.csv")
 head(barfly_pr)
 
 # Convert it to a shapefile 
@@ -28,7 +28,7 @@ grid()
 # Let's try reading in a polygon
 WG <- st_read("WG.shp")
 class(WG)
-st_crs(WG) <- 4326
+st_crs(WG) <- 4326  #"+proj=longlat +datum=WGS84 +no_defs"
 
 # A quick reminder on the different types of functions one can use in sf
 methods(class = "sf")
@@ -132,6 +132,7 @@ nc[Ashe, op=st_touches] # Removing Self-intersection (Ashe with Ashe)
 ## Examples of using tidy ##
 ## Example 1
 library(dplyr)
+library(tidyverse)
 nc %>% 
   # salculate Area in km^2
   mutate(area_km2 = AREA * 10000) %>% 
